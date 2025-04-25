@@ -26,7 +26,6 @@ import {
     { name: "Expenses", icon: Receipt, color: "#F87171", href: "/expense" },
     { name: "Budget", icon: PiggyBank, color: "#F59E0B", href: "/budget" },
     { name: "Subscriptions", icon: CalendarClock, color: "#8B5CF6", href: "/subscription" },
-    { name: "Analytics", icon: BarChart, color: "#3B82F6", href: "/analytics" },
     { name: "Settings", icon: Settings, color: "#ccc", href: "/settings" },
   ];
   

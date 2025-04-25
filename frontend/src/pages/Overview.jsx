@@ -101,9 +101,9 @@ function Overview() {
             <NetBalanceChart incomeData={incomes} expenseData={expenses}/>
           </div>
         }
-        <div>
+        {budgets.length > 0 && <div>
           <BudgetBarChart budgetData = {budgets} />
-        </div>
+        </div>}
     </div>
   )
 }

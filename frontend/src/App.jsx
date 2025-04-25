@@ -10,7 +10,6 @@ import Income from "./pages/Income"
 import Overview from "./pages/Overview"
 import Subscriptions from "./pages/Subscriptions"
 import BudgetDetail from "./parts/budget/BudgetDetail"
-import Analytics from "./pages/Analytics"
 function App() {
 
   return (
@@ -25,7 +24,6 @@ function App() {
           <Route path='budget' element={<Budget/>} />
           <Route path="budget/:id/" element={<BudgetDetail />} />
           <Route path='income' element={<Income/>} />
-          <Route path='analytics' element={<Analytics/>} />
         </Route>
       </Route>
       <Route path="/login" element={<Login/>} />

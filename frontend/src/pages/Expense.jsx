@@ -58,7 +58,7 @@ function Expense() {
         {expenseData.length>0 && <div><ExpenseChart expenseData={expenseData}/></div>}
         <DisplayExpense refreshData = {fetchData}/>
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 py-4">
-          <ExpensePieChart expenseData={expenseData}/>
+          {expenseData.length > 0 && <ExpensePieChart expenseData={expenseData}/>}
           
         </div>
       </main>
