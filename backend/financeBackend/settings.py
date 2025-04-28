@@ -182,5 +182,11 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'financeApp.CustomUser'
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS settings
+CORS_ALLOW_ALL_ORIGINS = False
+
+CORS_ALLOWED_ORIGINS = [
+    "https://moneytrackingsystem-frontend.vercel.app",  # <-- YOUR frontend deployed URL here
+]
+
 CORS_ALLOW_CREDENTIALS = True
