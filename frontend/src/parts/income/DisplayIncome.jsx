@@ -58,6 +58,7 @@ function DisplayIncome({ refreshData }) {
     try {
       const data = await getIncomes();
       setData(data || []);
+      refreshData()
     } catch (error) {
       console.error("Failed to fetch income data", error);
       setData([]);
@@ -83,7 +84,6 @@ function DisplayIncome({ refreshData }) {
       toast.success("Income detail editted successfully");
       setEdit(false);
       fetchData();
-      refreshData();
     }
   };
 
@@ -106,7 +106,6 @@ function DisplayIncome({ refreshData }) {
     toast.warning("Income detail has been deleted");
     setConfirmDelete(false);
     fetchData();
-    refreshData();
   };
 
   const handleSearch = (e) => {

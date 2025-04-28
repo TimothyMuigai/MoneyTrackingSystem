@@ -8,10 +8,14 @@ import StatCard from '@/parts/common/StatCard';
 import DataContext from '@/context/DataContext';
 import SubPieChart from '@/parts/subscription/SubPieChart';
 import SubGraph from '@/parts/subscription/SubGraph';
+import CurrencyContext from '@/context/CurrencyContext';
 
 function Subscriptions() {
   const [subStats, SetSubStats] = useState([]);
   const { getSubs } = useContext(DataContext);
+  const { exchangeRates, toCurrency} = useContext(CurrencyContext);
+  const currencyAmount = exchangeRates[toCurrency] || 1;
+  const currency = toCurrency;
 
   useEffect(()=>{
     fetchData() 
@@ -47,7 +51,7 @@ function Subscriptions() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <StatCard name='Total Amount' icon={DollarSign} value={totalAmount} color='#EF4444' />
+          <StatCard name='Total Amount' icon={DollarSign} value={`${currency}.${(totalAmount*currencyAmount).toFixed(0).toLocaleString()}`} color='#EF4444' />
           <StatCard name='Pending Subscriptions' icon={Clock} value={noOfPending} color='#F59E0B' />
           <StatCard
               name='Completed Subscriptions'

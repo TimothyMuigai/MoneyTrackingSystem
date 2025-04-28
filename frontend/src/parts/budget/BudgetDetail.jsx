@@ -231,7 +231,7 @@ function BudgetDetail() {
 
         <div className="mt-4">
           <h2 className="font-bold text-lg">Budget Items</h2>
-          <BudgetList entryData = {entriesList} refreshBudget={fetchBudget} name={budgets.expense_category} />
+          <BudgetList entryData = {entriesList} refreshBudget={fetchBudget} name={budgets.expense_category} date={budgets.start_date} />
         </div>
       </div>
       

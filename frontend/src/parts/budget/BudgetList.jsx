@@ -10,7 +10,7 @@ import ConfirmDelete from "../common/DeleteModal";
 import { Link } from "react-router-dom";
 
 
-function BudgetList({ entryData, refreshBudget, name }) {
+function BudgetList({ entryData, refreshBudget, name, date }) {
   const { editExpense,deleteExpense } = useContext(ExpenseContext);
 
   const [budgetItems, setBudgetItems] = useState([]);
@@ -24,6 +24,7 @@ function BudgetList({ entryData, refreshBudget, name }) {
   
   useEffect(() => {
     setBudgetItems(entryData || []);
+    
   }, [entryData]);
 
   const openEditModal = (item) => {
@@ -111,7 +112,11 @@ function BudgetList({ entryData, refreshBudget, name }) {
           ))
         ) : (
           <p className="text-center text-gray-500 py-4">
-           <Link to='/expense'>Click here to add items to budget</Link>
+           {new Date() >= new Date(date) ? (
+            <Link to="/expense" className="text-blue-500 hover:underline">Click here to add items to budget</Link>
+          ) : (
+            "Cannot add items yet"
+          )}
           </p>
         )}
       </div>
