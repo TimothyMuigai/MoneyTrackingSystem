@@ -185,5 +185,5 @@ AUTH_USER_MODEL = 'financeApp.CustomUser'
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
-    "https://ets-frontend.vercel.app/",
+    "https://ets-frontend.vercel.app",
 ]
